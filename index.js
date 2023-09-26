@@ -6,9 +6,6 @@ let numberArray = [7, 8, 9, 4, 5, 6, 1, 2, 3];
 let firstArray = ["(", "X", "+"];
 let secondArray = [")", "/", "-"];
 let equal = document.querySelector(".equal");
-var firstNumber;
-var secondNumber;
-var operator;
 
 firstGroup.innerHTML = firstArray
   .map(
@@ -38,34 +35,23 @@ for (let i = 0; i < numberArray.length; i++) {
 
 for (let i = 0; i < firstArray.length; i++) {
   document.getElementById(`${i}op1`).addEventListener("click", () => {
-    firstNumber = Number(calcWindow.textContent);
     calcWindow.innerHTML += `<span>${
       document.getElementById(`${i}op1`).textContent
     }</span>`;
-    operator = document.getElementById(`${i}op1`).textContent;
   });
   document.getElementById(`${i}op2`).addEventListener("click", () => {
-    firstNumber = Number(calcWindow.textContent);
     calcWindow.innerHTML += `<span>${
       document.getElementById(`${i}op2`).textContent
     }</span>`;
-    operator = document.getElementById(`${i}op2`).textContent;
   });
+}
+
+const calculate = (math) => {
+ return new Function('return ' + (math))();
 }
 
 equal.addEventListener("click", () => {
   let math = calcWindow.textContent;
-  secondNumber = math.substring(Number(math.indexOf(operator)) + 1);
-  if (operator === "/") {
-    calcWindow.textContent = Number(firstNumber) / Number(secondNumber);
-  }
-  if (operator === "X") {
-    calcWindow.textContent = Number(firstNumber) * Number(secondNumber);
-  }
-  if (operator === "+") {
-    calcWindow.textContent = Number(firstNumber) + Number(secondNumber);
-  }
-  if (operator === "-") {
-    calcWindow.textContent = Number(firstNumber) - Number(secondNumber);
-  }
+  let value = calculate(math);
+  calcWindow.textContent = value;
 });
