@@ -2,7 +2,7 @@ let calcWindow = document.getElementById("window");
 let numbers = document.querySelector(".numbers");
 let firstGroup = document.getElementById("operators1");
 let secondGroup = document.getElementById("operators2");
-let numberArray = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, ".", "C"];
+let numberArray = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, ".", "CE"];
 let firstArray = ["(", "*", "+"];
 let secondArray = [")", "/", "-"];
 let equal = document.querySelector(".equal");
@@ -27,7 +27,7 @@ numbers.innerHTML = numberArray
 
 for (let i = 0; i < numberArray.length; i++) {
   document.getElementById(i).addEventListener("click", () => {
-    if (document.getElementById(i).textContent !== "C") {
+    if (document.getElementById(i).textContent !== "CE") {
       calcWindow.innerHTML += `<span>${
         document.getElementById(i).textContent
       }</span>`;
