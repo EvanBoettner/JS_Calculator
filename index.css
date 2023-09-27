@@ -63,15 +63,22 @@ body {
     background-color: rgb(186, 245, 175);
     max-height: 34px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
+    min-width: 12px;
+    max-width: 12px;
+    height: 16px;
+    max-height: 20px;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 .operators {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 18px;
     margin: 5px;
+    margin-top: 12px;
 }
 
 .operator {

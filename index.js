@@ -2,8 +2,8 @@ let calcWindow = document.getElementById("window");
 let numbers = document.querySelector(".numbers");
 let firstGroup = document.getElementById("operators1");
 let secondGroup = document.getElementById("operators2");
-let numberArray = [7, 8, 9, 4, 5, 6, 1, 2, 3];
-let firstArray = ["(", "X", "+"];
+let numberArray = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, ".", "C"];
+let firstArray = ["(", "*", "+"];
 let secondArray = [")", "/", "-"];
 let equal = document.querySelector(".equal");
 
@@ -27,9 +27,13 @@ numbers.innerHTML = numberArray
 
 for (let i = 0; i < numberArray.length; i++) {
   document.getElementById(i).addEventListener("click", () => {
-    calcWindow.innerHTML += `<span>${
-      document.getElementById(i).textContent
-    }</span>`;
+    if (document.getElementById(i).textContent !== "C") {
+      calcWindow.innerHTML += `<span>${
+        document.getElementById(i).textContent
+      }</span>`;
+    } else {
+      calcWindow.textContent = "";
+    }
   });
 }
 
@@ -47,8 +51,8 @@ for (let i = 0; i < firstArray.length; i++) {
 }
 
 const calculate = (math) => {
- return new Function('return ' + (math))();
-}
+  return new Function("return " + math)();
+};
 
 equal.addEventListener("click", () => {
   let math = calcWindow.textContent;
