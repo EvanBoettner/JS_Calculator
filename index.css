@@ -75,6 +75,10 @@ box-shadow: -1px 5px 16px 11px rgba(0,0,0,0.75);
     text-align: center;
 }
 
+.number:active {
+    background-color: rgb(0, 153, 255);
+}
+
 .operators {
     display: flex;
     flex-direction: column;
@@ -97,6 +101,10 @@ box-shadow: -1px 5px 16px 11px rgba(0,0,0,0.75);
     text-align: center;
 }
 
+.operator:active {
+    background-color: rgb(0, 153, 255);
+}
+
 .equal {
     text-align: center;
     font-weight: 700;
@@ -108,4 +116,8 @@ box-shadow: -1px 5px 16px 11px rgba(0,0,0,0.75);
     cursor: pointer;
     margin-left: 4px;
     border-radius: 4px;
+}
+
+.equal:active {
+    background-color: rgb(0, 153, 255);
 }
